@@ -1,3 +1,8 @@
+"""subject = f"Room 2, 15-16 o´clock"
+body = (f"You have new booking, room 2 15-16 o'clock."
+)
+
+send_email("********@gmail.com", subject, body)"""
 
 
 """
