@@ -12,8 +12,6 @@ def new_room(room_name, description = None):
 def room_info(room_name):
     info = get_room_info(room_name)
     return [i for i in info]
-    #description = f'"{info[1]}\"' if info[1] else 'отсутствует'
-    #return f"Название {info[0]}, описание : {description}"
 
     
 

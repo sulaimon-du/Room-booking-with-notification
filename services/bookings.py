@@ -1,12 +1,13 @@
 from datetime import datetime
 
-from properties.bookings import  check_booking_time, booking_aviable_room, update_booking_info, cancel_booking
+from properties.bookings import  check_booking_time, booking_aviable_room
 from services.rooms import room_info as get_room_info
 
 
 
 def booking_room(room_name, employee_name, phone_number, email, start_time, end_time, title, description=None):
     """
+    Service: бронь комнаты
     """
     room_info = get_room_info(room_name)
     room_id = room_info[0]
@@ -21,6 +22,7 @@ def booking_room(room_name, employee_name, phone_number, email, start_time, end_
 
 def check_is_aviable(room_name, start_time, end_time):
     """
+    Service: проверка доступности комнаты в нужное время
     """
     check = check_booking_time(room_name, start_time, end_time)
     start_time = time_in_minute(start_time)
@@ -43,7 +45,9 @@ def check_is_aviable(room_name, start_time, end_time):
 
 
 def time_in_minute(time):
-    """"""
+    """
+    Service: перевод времени в минуты
+    """
     time = datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
     minutes = time.hour * 60 + time.minute
     return minutes

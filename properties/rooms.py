@@ -4,7 +4,7 @@ from utils.connection import get_db_connection
 #Create
 def create_room(room_name, description = None):
     """
-    БД: Создание комнаты с / без описания
+    БД: Создание комнаты
     """
     conn = get_db_connection()
     # Проверка входных данных
@@ -13,7 +13,7 @@ def create_room(room_name, description = None):
                     (room_name, description))
         conn.commit()
     except Exception as e:
-        error = f"Произошла ошибка при создании комнаты: {e}"
+        error = f"Произошла ошибка при добавлении комнаты: {e}"
     finally:
         conn.close()
 
@@ -38,12 +38,14 @@ def get_room_info(room_name):
     
     return info
 
+
 #Update
 def update_room_info():
     conn = get_db_connection()
     conn.execute("")
     conn.commit()
     conn.close()
+
 
 #Delete
 def deactivate_room():

@@ -13,15 +13,7 @@ print(new_room(4, "Большая комната для совещаний"))
 print(new_room(5, "Большая комната для мероприятий"))"""
 
 
-"""booking_room(room_name = 1, 
-                   employee_name = 'Su', 
-                   phone_number = 981020593, 
-                   email = 'su@gmail.com', 
-                   start_time = "2025-11-22 09:30:00", 
-                   end_time = "2025-11-22 10:00:00", 
-                   title = "Собеседование с Сулаймоном Ганизода", 
-                   description="не обязательное, можно сразу взять")
-                   
+"""                
 booking_room(room_name = 1, 
                    employee_name = 'Азимджон Алимов', 
                    phone_number = 989766754, 

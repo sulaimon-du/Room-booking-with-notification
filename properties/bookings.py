@@ -33,27 +33,22 @@ def check_booking_time(room_name,start_time, end_time):
     # Проверка входных данных
     booked = None
     try:
-        booked = conn.execute("""SELECT r.room_name, b.title,b.employee_name,
-                              b.start_time, b.end_time 
-                     FROM bookings b
-                     JOIN rooms r ON b.room_id = r.id
-                     WHERE r.room_name = ? AND DATE(b.start_time) = ?
-                              OR DATE(b.end_time) = ?
-                              
-                              
-                     ORDER BY b.start_time DESC
-                     """, 
-                    (room_name, start_time[:10], end_time[:10])).fetchall()
+        booked = conn.execute(
+            """
+            SELECT r.room_name, b.title,b.employee_name,
+            b.start_time, b.end_time 
+            FROM bookings b
+            JOIN rooms r ON b.room_id = r.id
+            WHERE r.room_name = ? AND DATE(b.start_time) = ?
+            OR DATE(b.end_time) = ?
+            ORDER BY b.start_time DESC""", 
+            (room_name, start_time[:10], end_time[:10])).fetchall()
+        
     except Exception as e:
         print(f"Произошла ошибка при  проверке: {e}")
     finally:
         conn.close()
     return booked
-
-    
-def send_nothification_by_email():
-    """"""
-    pass
 
 
 #Read
@@ -63,12 +58,14 @@ def get_booking_info(room_name):
     """
     pass
 
+
 #Update
 def update_booking_info():
     conn = get_db_connection()
     conn.execute("")
     conn.commit()
     conn.close()
+
 
 #Delete
 def cancel_booking():

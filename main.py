@@ -56,9 +56,9 @@ def rooms_booking():
                     print("Это время свободно, можно бронировать")
 
                     first_name = input("Введите пожалуйста ваше Имя: ")
-                    last_name = input("Фамилия: ")
+                    last_name = input("Вашу Фамилию: ")
                     phone_number= input("Ваш номер телефона: ")
-                    email= input("Вашу почта: ")
+                    email= input("Ваша почта: ")
                     title = input("Название встречи: ")
                     description = input("Описание встречи (можно оставить пустым): ")
 
